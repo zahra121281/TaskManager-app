@@ -1,0 +1,53 @@
+@page "/edit/{taskid}"
+@using Microsoft.AspNetCore.SignalR.Client; 
+@using ToDoApiCli.Api 
+@using ToDoApiCli.Client
+@using ToDoApiCli.Model  
+@inject IJSRuntime js
+@inject NavigationManager Navigater
+@using Microsoft.AspNetCore.Mvc
+
+<link rel="stylesheet" href="css/form.css">
+
+<h3>Edit</h3>
+
+<form class="form form1">
+            <label for="description" >Description:</label><br>
+            <input type="text" id="description" name="description" @bind="task.Description" ><br><br>
+            <label for="date" >Date :</label><br>
+            <input type="date" id="date" name="date" @bind="task.DateToDone"><br><br>
+            <button class="button button2" @onclick="Edittask"><i class="fa fa-edit" >Edit</i></button>
+</form>
+
+@code{
+
+    [BindProperty]
+    public Myitem task {get ;set ;}
+    [Parameter]
+    public string taskid {get ;set ;}
+    Connection connection = new Connection() ;
+    protected override void OnInitialized()
+    {
+        task = new Myitem() ; 
+        connection.hubConnection.On("Notify" ,() => {
+            StateHasChanged() ;
+        }) ; 
+    }
+    public async Task Edittask()
+    {
+        try{
+            if (await js.InvokeAsync<bool>("confirm", $"Do you want to Edit item with id: {taskid}?"))
+            {
+                task.MyitemId = taskid ; 
+                connection.objmake().ToDoUpdatePost(task) ; 
+                await js.InvokeVoidAsync("alert", $"Updated Successfully item with id: {taskid}!");
+                await connection.hubConnection.SendAsync("HubServer");
+            }
+        }
+        catch(Exception e)
+        {
+            await js.InvokeVoidAsync("alert",$"ERROR HAS OCCURED MESSAGE: {e.Message}");
+            return ; 
+        }
+    }
+}

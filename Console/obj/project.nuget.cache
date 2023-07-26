@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "qEw2WALXMmp0CmhQ+trvQMGm7F6xuV/oBcpGcoscLiNKYiAi+eSPAPqD1f1GYLRvQ7qtprHJGho7BFNS1P69kA==",
+  "success": false,
+  "projectFilePath": "c:\\git\\AP00012\\FinalProject\\Console\\Console.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://nuget.telerik.com/v3/index.json.",
+      "libraryId": "Microsoft.NETCore.App.Ref"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://nuget.telerik.com/v3/index.json.",
+      "libraryId": "Microsoft.WindowsDesktop.App.Ref"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://nuget.telerik.com/v3/index.json.",
+      "libraryId": "Microsoft.AspNetCore.App.Ref"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://nuget.telerik.com/v3/index.json.",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64"
+    }
+  ]
+}

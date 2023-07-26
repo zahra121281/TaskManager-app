@@ -1,0 +1,18 @@
+@page "/"
+@inject NavigationManager Navigater
+
+<link rel="stylesheet" href="css/startup.css">
+
+<div class="text-center">
+    <h4>"To Do App"</h4>
+    <img src="css/img/verified.gif"/><br>
+    <button class= "button button3" @onclick="Start">Start</button>
+</div>
+
+@code{
+    
+    private void Start()
+    {
+        Navigater.NavigateTo("/TodayTasks") ; 
+    }
+}

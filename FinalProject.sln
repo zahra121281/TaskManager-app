@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webAPI", "webAPI\webAPI.csproj", "{92978593-1044-465A-BCF7-A632919F89BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "library", "library\library.csproj", "{E167BB00-222D-4F50-A493-0EA361E73DCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDoApiCli", "ToDoApiCli", "{062EC5E7-84EC-46AC-BDB3-9FFA6368DA95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9D2749F4-1F47-4137-BECD-4622D2CFA73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApiCli", "ToDoApiCli\src\ToDoApiCli\ToDoApiCli.csproj", "{D8EF1621-E0E6-481C-8C4B-F816E9F57025}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApiCli.Test", "ToDoApiCli\src\ToDoApiCli.Test\ToDoApiCli.Test.csproj", "{81EC6798-A6FA-4242-AC0E-B65FF6C4564E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WpfApp", "WpfApp", "{8DC9B0D8-EC6F-47CE-9F7E-F33A35C69894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp\WpfApp.csproj", "{C6D0B39A-3CC2-497D-9908-3C4A3C08BCFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92978593-1044-465A-BCF7-A632919F89BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92978593-1044-465A-BCF7-A632919F89BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92978593-1044-465A-BCF7-A632919F89BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92978593-1044-465A-BCF7-A632919F89BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E167BB00-222D-4F50-A493-0EA361E73DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E167BB00-222D-4F50-A493-0EA361E73DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E167BB00-222D-4F50-A493-0EA361E73DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E167BB00-222D-4F50-A493-0EA361E73DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8EF1621-E0E6-481C-8C4B-F816E9F57025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8EF1621-E0E6-481C-8C4B-F816E9F57025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8EF1621-E0E6-481C-8C4B-F816E9F57025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8EF1621-E0E6-481C-8C4B-F816E9F57025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EC6798-A6FA-4242-AC0E-B65FF6C4564E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EC6798-A6FA-4242-AC0E-B65FF6C4564E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EC6798-A6FA-4242-AC0E-B65FF6C4564E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EC6798-A6FA-4242-AC0E-B65FF6C4564E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D0B39A-3CC2-497D-9908-3C4A3C08BCFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D0B39A-3CC2-497D-9908-3C4A3C08BCFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D0B39A-3CC2-497D-9908-3C4A3C08BCFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D0B39A-3CC2-497D-9908-3C4A3C08BCFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D2749F4-1F47-4137-BECD-4622D2CFA73A} = {062EC5E7-84EC-46AC-BDB3-9FFA6368DA95}
+		{D8EF1621-E0E6-481C-8C4B-F816E9F57025} = {9D2749F4-1F47-4137-BECD-4622D2CFA73A}
+		{81EC6798-A6FA-4242-AC0E-B65FF6C4564E} = {9D2749F4-1F47-4137-BECD-4622D2CFA73A}
+		{C6D0B39A-3CC2-497D-9908-3C4A3C08BCFC} = {8DC9B0D8-EC6F-47CE-9F7E-F33A35C69894}
+	EndGlobalSection
+EndGlobal

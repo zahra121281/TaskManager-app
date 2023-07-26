@@ -1,0 +1,33 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css") ; 
+
+
+h4 {
+    color:  #620979;
+    text-align: center;
+}
+
+.button3 {
+    border-radius: 5% ;
+    /* position: fixed ;  */
+    font-size :xx-large;
+    color : white ;
+    background-color: #620979;
+    border: 2px solid #620979 ;
+    width: 300px;
+    height: 100px;
+    align-items:center
+}
+.button3:hover {
+    color : #620979;
+    background-color:  white ;
+}
+
+.text-center {
+    text-align: center;
+  }
+
+img{
+    width :500px ; 
+    height: 400px ;
+}

@@ -1,0 +1,86 @@
+{
+  "SerializedFilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\obj\\Debug\\net6.0\\project.razor.json",
+  "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\asp.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "6.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 1000
+  },
+  "RootNamespace": "asp",
+  "Documents": [
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\CreatTask.razor",
+      "TargetPath": "Pages\\CreatTask.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\_Host.cshtml",
+      "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\AllTasks.razor",
+      "TargetPath": "Pages\\AllTasks.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\Startup.razor",
+      "TargetPath": "Pages\\Startup.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\TodayTasks.razor",
+      "TargetPath": "Pages\\TodayTasks.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\EditTask.razor",
+      "TargetPath": "Pages\\EditTask.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\git\\AP00012\\FinalProject\\blazor\\Pages\\_Layout.cshtml",
+      "TargetPath": "Pages\\_Layout.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
+  "SerializationFormat": "0.3"
+}

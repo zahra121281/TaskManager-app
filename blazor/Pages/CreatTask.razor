@@ -1,0 +1,61 @@
+@page "/CreatTask"
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.SignalR.Client; 
+@using ToDoApiCli.Api 
+@using ToDoApiCli.Client
+@using ToDoApiCli.Model 
+@inject IJSRuntime js
+<link rel="stylesheet" href="css/form.css">
+
+    <div>
+        <h3>creat new Task</h3>
+        <form class="form form1">
+            <label for="description" >Description:</label><br>
+            <input type="text" id="description" name="description" @bind="task.Description" required><br><br>
+            <label for="date" >Date :</label><br>
+            <input type="date" id="date" name="date" @bind="task.DateToDone" required><br><br>
+            <label for="id" >ID :</label><br>
+            <input type="text" id="id" name="id" @bind="task.MyitemId" required><br><br>
+            <button class="button button2" @onclick="creatTask"><i class="fa fa-plus" >creat</i></button>
+        </form>
+    </div>
+
+@code
+{
+    [BindProperty]
+    public Myitem task {get ;set ;}
+   
+    Connection connection = new Connection() ;
+    protected override void OnInitialized()
+    {
+        
+        task = new Myitem() ; 
+        connection.hubConnection.On("Notify" ,() => {
+            StateHasChanged() ;
+        }) ;   
+        
+    }
+    private async Task creatTask()
+    {
+        try{
+            if(!connection.objmake().ToDoCheckIdGet(task.MyitemId))
+            {
+                task.IsDone = false ;
+                await js.InvokeVoidAsync("alert", $"added Successfully with id: {task.MyitemId}!");
+                connection.objmake().ToDoPost(task) ; 
+                await connection.hubConnection.SendAsync("HubServer") ;
+            }
+            else{
+                await js.InvokeVoidAsync("alert", $"id has been used.pleas choose a new one!");      
+            }
+        }
+        catch(Exception e)
+        {
+            await js.InvokeVoidAsync("alert",$"ERROR HAS OCCURED MESSAGE: {e.Message}");
+            return ; 
+        }
+    }
+}
+
+
+

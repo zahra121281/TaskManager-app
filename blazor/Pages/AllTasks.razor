@@ -1,0 +1,122 @@
+﻿@page "/AllTasks"
+@using Microsoft.AspNetCore.SignalR.Client; 
+@using Microsoft.AspNetCore.Mvc
+@using ToDoApiCli.Api 
+@using ToDoApiCli.Client
+@using ToDoApiCli.Model 
+@inject IJSRuntime js
+<link rel="stylesheet" href="css/form.css">
+<link href='https://css.gg/trash.css' rel='stylesheet'>
+@if(items.Count > 0 )
+{
+  <h3> AllTasks </h3>
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>is done?</th>
+                    <th>Date to done</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+        <tbody>
+
+        @foreach(var item in items)
+        {
+            <tr>
+                <td>@item.MyitemId</td>
+                <td>@item.Description</td>
+                <th><input type="checkbox" @onclick="@(() => IsDone(item.MyitemId) )"  checked=@item.IsDone ></th>
+                <td>@item.DateToDone.ToShortDateString()</td>
+                <td><a class="btn btn-success"  href="edit/@item.MyitemId" >Edit</a></td>   
+                <td><input type="button" class="btn btn-danger" @onclick="@(() => Deletetask(item.MyitemId))"value="Delete"></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else if(items == null )
+{
+    <h3>Loading...</h3>
+}
+else{
+    <h3>No Tasks Found.</h3>
+}
+
+@code {
+    private List<Myitem> items {get ;set ;}
+    private Myitem Dummytask {get ;set ;}
+    
+    Connection connection = new Connection() ;
+    protected override void OnInitialized()
+    {
+        items = new List<Myitem>() ; 
+        items = connection.objmake().ToDoGet() ; 
+        Dummytask = new Myitem() ;
+        connection.hubConnection.On("Notify" ,() => {
+            StateHasChanged() ;
+        }) ;   
+    }
+        public async Task Deletetask(string Taskid)
+        {   
+            try{
+                if (await js.InvokeAsync<bool>("confirm", $"Do you want to delete item with id: {Taskid}?"))
+                {
+                    connection.objmake().ToDoItemidDelete(Taskid) ; 
+                    await connection.hubConnection.SendAsync("HubServer");
+                }
+                else{
+                    return; 
+                }
+            }
+            catch(Exception e)
+            {
+                await js.InvokeVoidAsync("alert",$"ERROR HAS OCCURED MESSAGE: {e.Message}");
+                return ; 
+            } 
+        }
+
+        public async Task IsDone(string Taskid)
+        {
+            try
+            {
+                Dummytask.IsDone= true ; Dummytask.DateToDone = DateTime.Now ;
+                Dummytask.MyitemId = Taskid ; Dummytask.Description="dummytask" ; 
+                connection.objmake().ToDoMakeDonePost(Dummytask) ;  
+              
+            }
+            catch(Exception e)
+            {
+                await js.InvokeVoidAsync("alert",$"ERROR HAS OCCURED MESSAGE: {e.Message}");
+                return ; 
+            }
+        }    
+
+        
+      
+       
+} 
+
+
+           
+
+
+
+
+
+
+
+
+  @* public bool IsConnected => 
+            hubConnection?.State == HubConnectionState.Connected; *@
+        @* public async ValueTask DisposeAsync()
+        {
+            if (hubConnection is not null)
+            {
+                await hubConnection.DisposeAsync();
+            }
+        } disabled="@(!IsConnected)"  *@
+
+                               
